@@ -1,0 +1,12 @@
+#ヘロンの公式を用いて三角形の面積を求めるプログラム
+import math
+def heron(a,b,c):
+    s = 0.5*(a+b+c)
+    return math.sqrt(s * (s-a) * (s-b) * (s-c))
+
+print("注：代入する数値の単位はそろえてください！")
+a = float(input("三角形の一つ目の辺の長さ："))
+b = float(input("三角形の二つ目の辺の長さ："))
+c = float(input("三角形の三つ目の辺の長さ："))
+
+print(a, "、", b, "、", c, "の三角形の面積は", heron(a,b,c), "です。")
