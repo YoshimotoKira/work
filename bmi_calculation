@@ -1,0 +1,7 @@
+#BMIを計算するプログラム
+def bmi(h, w): 
+  return w / (h/100.0)**2
+
+h = float(input("身長を入力してください（cm）："))
+w = float(input("体重を入力してください（kg）："))
+round(bmi(h, w), 2)
