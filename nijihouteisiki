@@ -1,0 +1,24 @@
+#二次方程式の解の近似値を求めるプログラム
+import math
+
+def qe_disc(a,b,c):
+    return b**2-4*a*c
+
+def qe_solution1(a,b,c):
+    return (-b - math.sqrt(qe_disc(a,b,c))) / (2*a)
+
+def qe_solution2(a,b,c):
+    return (-b+math.sqrt(qe_disc(a,b,c)))/(2*a)
+
+a = float(input("x^2の係数を入力してください："))
+b = float(input("xの係数を入力してください："))
+c = float(input("定数項を入力してください："))
+if qe_disc(a,b,c) >= 0:
+  if qe_solution1(a,b,c) == qe_solution2(a,b,c):
+      print("重解：", qe_solution1(a,b,c))
+  else:
+    print("解１：", qe_solution1(a,b,c))
+    print("解２：", qe_solution2(a,b,c))
+else:
+  print("解１：", -b/(2*a), "+", math.sqrt((-1) * qe_disc(a,b,c)), "i")
+  print("解２：", -b/(2*a), "-", math.sqrt((-1) * qe_disc(a,b,c)), "i")
