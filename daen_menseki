@@ -3,7 +3,7 @@ import random
 
 n = 0
 m = 0
-for i in range(10000):  # 1000回で足りなかったら増やす。
+for i in range(10000):
   n=n+1
 
   x = random.random() * 3
