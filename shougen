@@ -1,0 +1,15 @@
+#弧度法での角度tが与えられた時の点(cost,sint)の象限を出力するプログラム
+import math
+
+t = int(input())
+
+if math.sin(t) > 0:
+    if math.cos(t) > 0:
+      print("第一象限")
+    else:
+      print("第二象限")
+else:
+    if math.cos(t) > 0:
+      print("第四象限")
+    else:
+      print("第三象限")
