@@ -1,0 +1,23 @@
+# sin(x*x) を [0,√(π/4)]の範囲で台形近似・積分
+import math
+
+def f(x):
+    return math.sin(x*x)
+
+def rectangular_approximation(f, a, b, n):
+    delta_x = (b - a) / n
+    integral_sum = 0.0
+
+    for i in range(n):
+        x_i = a + i * delta_x
+        integral_sum += f(x_i) + f(x_i + delta_x) # sum = sum + f(xi)
+
+    integral_approximation = delta_x * integral_sum / 2
+    return integral_approximation
+
+a = 0  # 積分範囲の下限
+b = math.sqrt(math.pi/4)     # 積分範囲の上限
+n = 1000000     # 分割数
+
+approximation = rectangular_approximation(f, a, b, n)
+print("数値積分の近似値:", approximation)
