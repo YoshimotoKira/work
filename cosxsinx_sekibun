@@ -1,0 +1,23 @@
+# cos(x)sin(x)を [0,π/4]で積分
+import math
+
+def f(x):
+    return math.cos(x) * math.sin(x)
+
+def rectangular_approximation(f, a, b, n):
+    delta_x = (b - a) / n
+    integral_sum = 0.0
+
+    for i in range(n):
+        x_i = a + i * delta_x
+        integral_sum += f(x_i)
+
+    integral_approximation = delta_x * integral_sum
+    return integral_approximation
+
+a = 0  # 積分範囲の下限
+b = math.pi / 4  # 積分範囲の上限
+n = 100  # 分割数
+
+approximation = rectangular_approximation(f, a, b, n)
+print("数値積分の近似値:", approximation)
