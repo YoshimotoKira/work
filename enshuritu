@@ -1,0 +1,15 @@
+#円周率をモンテカルロ法で求める
+import random
+
+n = 0
+m = 0
+for i in range(10000):  # 1000回で足りなかったら増やす。
+  n=n+1
+
+  x = random.random()
+  y = random.random()
+  # print(r)
+  if x*x + y*y < 1:
+    m=m+1
+
+print(4*m/n)
