@@ -1,0 +1,7 @@
+#九九表を作成するプログラム
+for n in range(1,10):
+  for m in range(1,10):
+    if n*m<10:
+      print(" ",end="")
+    print(n*m,end=" ")
+  print()
