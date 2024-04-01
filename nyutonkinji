@@ -1,0 +1,15 @@
+#cos(x)-x=0の近似解をニュートン法で解く
+import math
+def f(x):
+  return math.cos(x)-x
+def g(x):
+  return -math.sin(x)-1
+x = 0.5
+n = 0
+ε = float (input("許容誤差を入力してください。"))
+while (abs(f(x)) > ε):
+ print("x[",n,"] =",f(x))
+ x = -f(x)/g(x) + x
+ n = n + 1
+print("x[",n,"] =",f(x))
+print("近似解はx=",x)
